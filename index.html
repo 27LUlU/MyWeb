@@ -8,19 +8,30 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
 </head>
 
 <body>
   <div class="container">
     <div class="personal_info">
-      <div class="head_icon">
-        <span class="material-symbols-outlined" id="menu">menu</span>
-        <span class="material-symbols-outlined" id="favorite">favorite</span>
-      </div>
-      <a href="index.html">
+      <nav>
+        <ul class="menu">
+          <li><a class="menu_item" href="#">Home</a></li>
+          <li><a class="menu_item" href="#">Profile</a></li>
+          <li><a class="menu_item" href="#">Data Science</a></li>
+          <li><a class="menu_item" href="#">Projects</a></li>
+        </ul>
+        <button class="hamburger">
+          <span class="menu_icon material-symbols-outlined">menu</span>
+          <span class="close_icon material-symbols-outlined">close</span>
+        </button>
+      </nav>
+      <!-- <a href="index.html">
         <h1>XIA WU</h1>
-      </a>
+      </a> -->
+      <h1>XIA WU</h1>
       <p>Welcome to my world. This is my little projects</p>
       <a href="#" class="personal_info_btn">
         <div class="personal_info_btn_text">contact me</div>
@@ -45,5 +56,37 @@
 
   </div>
 </body>
+
+<script>
+  const menu = document.querySelector(".menu");
+  const menuItems = document.querySelectorAll(".menu_item");
+  const hamburger = document.querySelector(".hamburger");
+  const closeIcon = document.querySelector(".close_icon");
+  const menuIcon = document.querySelector(".menu_icon");
+  const container = document.querySelector(".container")
+
+  function toggleMenu() {
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+      container.style.transform = "translateY(0)"
+      container.style.borderRadius = "0"
+    } else {
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+      container.style.transform = "translateY(10vh)"
+      container.style.borderRadius = "20px"
+    }
+  }
+
+  hamburger.addEventListener("click", toggleMenu)
+  menuItems.forEach(
+    function (menuItem) {
+      menuItem.addEventListener("click", toggleMenu);
+    }
+  )
+</script>
 
 </html>
