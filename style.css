@@ -1,61 +1,48 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  min-height: 100%;
+  /* min-height: calc(100vh - 2 * 4vw); */
   background: #7087f7;
+  font-family: "Comfortaa", cursive;
+  /* overflow: hidden; */
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  background: rgb(243, 239, 232);
+  width: 100%;
+  position: relative;
   transition: transform 0.2s;
+  background: rgb(243, 239, 232);
 }
 
 .personal_info {
+  height: 100%;
+  padding: 20px;
+  position: fixed;
   width: 25%;
-  height: 100vh;
-  left: 0%;
+  z-index: 2;
   border-right: 1px solid #999;
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
-
-/* .menu_icon {
-  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
-}
-
-.head_icon {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(3, 2fr);
-  margin-top: 1.5vw;
-}
-
-#menu {
-  text-align: center;
-}
-
-#favorite {
-  grid-column: 3;
-  text-align: center;
-} */
 
 .personal_info h1 {
-  padding-top: 20vh;
+  padding-top: 2rem;
   font-family: "Comfortaa", cursive;
   color: #000;
   font-weight: 700;
   font-size: 48px;
 }
 
-a {
+.personal_info a {
   text-decoration: none;
+  color: #f7f5f7;
 }
 
 .personal_info p {
@@ -63,26 +50,27 @@ a {
 }
 
 .personal_info_btn {
-  text-decoration: none;
-  border-radius: 20vw;
-  border: 2px solid #000;
-  background: #000;
+  border-radius: 10rem;
+  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  border: none;
   color: #f7f5f7;
-  padding: 0.83em 0;
-  position: absolute;
-  top: auto;
-  bottom: 2.8em;
+  padding: 1rem 4.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  /* position: absolute; */
+  top: 30rem;
+  /* bottom: ; */
   left: 2.8em;
   right: 2.8em;
 }
 
-.personal_info_btn_text {
-  text-align: center;
-}
-
 .project_wrapper {
-  width: 100%;
+  position: relative;
   padding-left: 25%;
+  width: 100%;
+  z-index: 1;
+  background: #f7f5f7;
 }
 
 .project_info {
@@ -142,4 +130,12 @@ span.close_icon {
 
 .showMenu {
   transform: translateY(-90%);
+}
+
+.roadmap_info h2 {
+  padding: 1rem;
+  /* background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  color: transparent;
+  -webkit-background-clip: text; */
+  text-transform: uppercase;
 }
